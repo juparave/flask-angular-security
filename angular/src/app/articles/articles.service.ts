@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
-import {catchError, tap} from 'rxjs/operators';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Observable, Subject, throwError} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { catchError, tap } from 'rxjs/operators';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, Subject, throwError } from 'rxjs';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class ArticlesService {
   public articles: string[];
   public articlesChanged = new Subject<string[]>();

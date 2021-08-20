@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {ArticlesService} from '../articles.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ArticlesService } from '../articles.service';
 
 @Component({
   selector: 'app-articles-list',
@@ -23,6 +23,6 @@ export class ArticlesListComponent implements OnInit {
   }
 
   showEditor(): void {
-    this.router.navigate(['add'], {relativeTo: this.route});
+    this.router.navigate(['add'], { relativeTo: this.route });
   }
 }
