@@ -1,13 +1,12 @@
-import {Injectable} from '@angular/core';
-import {FormGroup} from '@angular/forms';
-import {Observable, Subject, throwError} from 'rxjs';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {catchError, map, take} from 'rxjs/operators';
-import {tap} from 'rxjs/internal/operators/tap';
-import {Router} from '@angular/router';
-import {UserModel} from '../model/UserModel';
+import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Observable, Subject, throwError } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { catchError, map, take, tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { UserModel } from '../model/UserModel';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class AuthService {
 
   authenticationChanged = new Subject();
@@ -60,7 +59,7 @@ export class AuthService {
       );
   }
 
-  getAuthenticatedUser(): Observable<UserModel>  {
+  getAuthenticatedUser(): Observable<UserModel> {
     return this.http.get<any>('/api/v1/users/current', {})
       .pipe(
         catchError(this.handleError),

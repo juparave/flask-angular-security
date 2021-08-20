@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from './auth.service';
-import {MustMatch} from '../shared/must-match.validator';
-import {Observable} from 'rxjs';
-import {Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from './auth.service';
+import { MustMatch } from '../shared/must-match.validator';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -18,7 +18,7 @@ export class AuthComponent implements OnInit {
   loginForm: FormGroup;
   hideForm = false;
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) {}
+  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.authService.getAuthenticatedUser().subscribe(user => {
