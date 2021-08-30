@@ -2,10 +2,14 @@
 Example application that shows how to use flask-security with Angular.
 
 ## Flask Deployment
-Install python 3.6. Run the Flask app with:
+Install python 3.8. Run the Flask app with:
 
-* pip install -r requirements.txt
-* python main.py
+    $ pip install -r requirements.txt
+    $ python main.py
+
+## Create development database
+
+    $ flask init-db
 
 ## Angular Frontend Installation and Deployment
 Change directory to the ***angular*** folder and run the following commands to build and execute the frontend app:

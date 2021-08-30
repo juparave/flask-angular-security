@@ -145,7 +145,7 @@ def create_app():
         init_db(app)
         print("Initialized database.")
 
-    init_db(app)
+    # init_db(app)
 
     return app
 
