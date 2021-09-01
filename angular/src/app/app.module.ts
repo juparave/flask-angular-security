@@ -8,7 +8,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { ArticlesListComponent } from './articles/articles-list/articles-list.component';
 import { ArticlesCreationComponent } from './articles/articles-creation/articles-creation.component';
+import { articleReducer } from './store/reducers/article.reducer';
 import { AuthComponent } from './auth/auth.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,9 @@ import { AuthComponent } from './auth/auth.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    StoreModule.forRoot({
+      articles: articleReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

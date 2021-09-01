@@ -9,6 +9,11 @@
           *ngFor="let article of articles;">
           {{ article }}
         </li>
+        <li
+          class="list-group-item"
+          *ngFor="let article of articles$ | async;">
+          {{ article.content }}
+        </li>
       </ul>
     </div>
     <div
