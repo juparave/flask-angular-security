@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.exc import IntegrityError
+from flask_mail import Mail
+from flask_migrate import Migrate
 from flask_security import Security
 from flask_restful import Api
 from flask_cors import CORS
+from sqlalchemy.exc import IntegrityError
 from app.forms.flask_security_extensions import *
 import flask_wtf
 import click
@@ -27,6 +29,7 @@ class CustomClientError(Exception):
 
 
 db = SQLAlchemy()
+mail = Mail()    # defined later in create_app
 
 
 def configure_flask_security(app):
@@ -106,6 +109,8 @@ def create_app():
     configure_app(app)
 
     db.init_app(app)
+    mail = Mail(app)
+    migrate = Migrate(app, db)
     api = Api(app, prefix="/api/v1")
     configure_flask_security(app)
 
