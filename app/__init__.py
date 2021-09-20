@@ -33,7 +33,7 @@ mail = Mail()    # defined later in create_app
 
 
 def configure_flask_security(app):
-    from .models.user import user_datastore
+    from .model.user import user_datastore
 
     # send CSRF cookie with the following key name
     app.config["SECURITY_CSRF_COOKIE"] = {"key": "XSRF-TOKEN"}

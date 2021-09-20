@@ -3,7 +3,7 @@ from flask import request
 from flask_security import current_user, auth_required
 
 from .. import db
-from ..models.article import Article
+from ..model.article import Article
 from ..schema.article import ArticleSchema
 from ..utils.response_format import build_data_response
 
