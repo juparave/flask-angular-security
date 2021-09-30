@@ -118,8 +118,8 @@ def create_app():
     # in production, use a reverse proxy like Nginx
     CORS(app)
 
-    from .views.article import MultipleArticleView, ArticleGetView
-    from .views.user import UserGetView
+    from .views.article_view import MultipleArticleView, ArticleGetView
+    from .views.user_view import UserGetView
 
     api.add_resource(MultipleArticleView, "/articles")
     api.add_resource(ArticleGetView, "/articles/<id>")

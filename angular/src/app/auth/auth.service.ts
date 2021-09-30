@@ -4,7 +4,7 @@ import { Observable, Subject, throwError } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, map, take, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { UserModel } from '../model/UserModel';
+import { User } from '../model/user';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -59,13 +59,13 @@ export class AuthService {
       );
   }
 
-  getAuthenticatedUser(): Observable<UserModel> {
+  getAuthenticatedUser(): Observable<User> {
     return this.http.get<any>('/api/v1/users/current', {})
       .pipe(
         catchError(this.handleError),
         take(1),
         map(resp => {
-          return new UserModel(resp.response.data.user_id, resp.response.data.username, resp.response.data.email);
+          return new User(resp.response.data.user_id, resp.response.data.username, resp.response.data.email);
         })
       );
   }
