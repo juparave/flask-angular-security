@@ -4,7 +4,7 @@ import { ArticlesService } from '../articles.service';
 @Component({
   selector: 'app-articles-creation',
   templateUrl: './articles-creation.component.html',
-  styleUrls: ['./articles-creation.component.less']
+  styleUrls: ['./articles-creation.component.scss']
 })
 export class ArticlesCreationComponent implements OnInit {
   public message = '';

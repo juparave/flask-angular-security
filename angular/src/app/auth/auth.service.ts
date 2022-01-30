@@ -15,7 +15,7 @@ export class AuthService {
 
   private handleAuthentication(): void {
     window.setTimeout(x => {
-      this.authenticationChanged.next();
+      this.authenticationChanged.next(null);
       this.router.navigate(['/articles']);
     }, 2000);
 
@@ -39,7 +39,7 @@ export class AuthService {
       .pipe(
         catchError(this.handleError),
         tap(resData => {
-          this.authenticationChanged.next();
+          this.authenticationChanged.next(null);
           this.router.navigate(['/']);
         })
       );

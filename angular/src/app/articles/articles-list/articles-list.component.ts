@@ -10,7 +10,7 @@ import { AppState } from 'src/app/model/app-state.model';
 @Component({
   selector: 'app-articles-list',
   templateUrl: './articles-list.component.html',
-  styleUrls: ['./articles-list.component.less']
+  styleUrls: ['./articles-list.component.scss']
 })
 export class ArticlesListComponent implements OnInit {
   articles$: Observable<Array<Article>>;
