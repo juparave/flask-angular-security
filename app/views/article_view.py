@@ -3,9 +3,9 @@ from flask import request
 from flask_security import current_user, auth_required
 
 from .. import db
-from ..model.article import Article
-from ..schema.article_schema import ArticleSchema
-from ..utils.response_format import build_data_response
+from app.model.article import Article
+from app.schema.article_schema import ArticleSchema
+from app.utils.response_format import build_data_response
 
 
 class MultipleArticleView(Resource):

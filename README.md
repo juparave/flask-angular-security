@@ -23,3 +23,7 @@ To build the minified JavaScript files, execute the following command:
 
 The app runs on port 4200. Nevertheless, a proxy is used which redirects outgoing requests to port 5000.
 This is needed to avoid CORS errors.
+
+## Default user
+
+
