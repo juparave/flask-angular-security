@@ -68,10 +68,14 @@ export class AuthComponent implements OnInit {
       authObs = this.authService.register(form);
     }
 
-    authObs.subscribe(responseData => {
-      this.errorMsg = '';
-    }, error => {
-      this.errorMsg = error;
+    authObs.subscribe({
+      next: responseData => {
+        // we dont use responseData
+        this.errorMsg = '';
+      }, 
+      error: err => {
+        this.errorMsg = err;
+      }
     });
   }
 

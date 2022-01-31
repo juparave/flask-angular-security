@@ -70,27 +70,17 @@ export class AuthService {
       );
   }
 
-  private handleError(errorRes: HttpErrorResponse): Observable<any> {
+  private handleError(errorRes: HttpErrorResponse): Observable<never> {
     let errorMessage = 'An unknown error occurred!';
-    if (!errorRes.error ||
-      !errorRes.error.response) {
-      return throwError(errorMessage);
+
+    if (!errorRes.error || !errorRes.error.response) {
+      return throwError(() => errorMessage);
     }
 
-    if (errorRes.error.response.error) {
-      return throwError(errorRes.error.response.error);
-
-    } else if (errorRes.error.response.errors) {
-
-      const errorObj = errorRes.error.response.errors;
-
-      for (const prop in errorObj) {
-        if (errorObj.hasOwnProperty(prop)) {
-          errorMessage = errorObj[prop];
-        }
-      }
+    if (errorRes.error.response.errors) {
+      return throwError(() => errorRes.error.response.errors);
     }
 
-    return throwError(errorMessage);
+    return throwError(() => errorMessage);
   }
 }
