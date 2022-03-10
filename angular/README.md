@@ -30,3 +30,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## State Management with ngrx
 
 ref: https://blog.logrocket.com/angular-state-management-made-simple-with-ngrx/
+
+## Tailwind CSS
+
+This project uses Tailwind, was added according to [official docs](https://tailwindcss.com/docs/guides/angular)
+
+    $ npm install -D tailwindcss postcss autoprefixer
+    $ npx tailwindcss init
+
