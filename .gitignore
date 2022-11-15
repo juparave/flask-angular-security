@@ -3,5 +3,6 @@
 /app/instance/
 
 flskenv
+.venv
 
 *pyc
